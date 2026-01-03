@@ -2,13 +2,16 @@ package org.bank.account.dbconfiguration;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import org.bank.account.Exception.DataException;
+import org.bank.account.exception.DataException;
 import javax.sql.DataSource;
 import java.io.InputStream;
 import java.util.Properties;
 
 public  final class DbConnection {
 
+
+    private DbConnection() {
+    }
   private  static final HikariDataSource datasource ;
 
      static {
@@ -17,8 +20,7 @@ public  final class DbConnection {
             Properties props=new Properties();
 
 
-            InputStream input=Thread.currentThread().
-                    getContextClassLoader().
+            InputStream input=DbConnection.class.getClassLoader().
                     getResourceAsStream("db.properties");
 
             if(input==null){
@@ -33,6 +35,10 @@ public  final class DbConnection {
             config.setUsername(props.getProperty("db.USER"));
             config.setPassword(props.getProperty("db.PASSWORD"));
 
+            config.setMaximumPoolSize(Integer.parseInt(props.getProperty("Hikari.maximumPool")));
+            config.setMinimumIdle(Integer.parseInt(props.getProperty("Hikari.minimumIdle")));
+            config.setIdleTimeout(Long.parseLong(props.getProperty("Hikari.idletimeout")));
+            config.setConnectionTimeout(Long.parseLong(props.getProperty("Hikari.connectionTimeout")));
             datasource=new HikariDataSource(config);
 
         } catch (Exception e) {
@@ -43,7 +49,7 @@ public  final class DbConnection {
 
     }
 
-    public static DataSource getConnection(){
+    public static DataSource getConnect(){
          return datasource;
     }
 

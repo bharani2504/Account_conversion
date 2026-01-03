@@ -1,6 +1,7 @@
 package org.bank.account.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 public class Customer {
     private long customerId;

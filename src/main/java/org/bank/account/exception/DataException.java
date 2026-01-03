@@ -1,4 +1,4 @@
-package org.bank.account.Exception;
+package org.bank.account.exception;
 
 public class DataException extends RuntimeException{
 
