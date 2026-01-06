@@ -1,18 +1,22 @@
 package org.bank.account.dao;
 
 import org.bank.account.dbconfiguration.DbConnection;
+import org.bank.account.exception.DataException;
 import org.bank.account.model.Customer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CustomerDAO {
 
-private static final Logger log= LoggerFactory.getLogger(CustomerDAO.class);
+    private static final Logger log= LoggerFactory.getLogger(CustomerDAO.class);
 
 
     static final int INSERT_CUSTOMER_NAME=1;
@@ -24,38 +28,71 @@ private static final Logger log= LoggerFactory.getLogger(CustomerDAO.class);
     static final int INSERT_AADHAR_NO=7;
     static final int INSERT_CUSTOMER_STATUS=8;
 
-   String InsertSQL="Insert into customer(customer_name,date_of_birth,gender,phone_no,email,address,aadhar_no,customer_status)" +
-           "VALUES(?,?,?,?,?,?,?,?)";
+    String InsertSQL="Insert into customer(customer_name,date_of_birth,gender,phone_no,email,address,aadhar_no,customer_status)" +
+            "VALUES(?,?,?,?,?,?,?,?)";
 
-   String SelectAllSQL="Select * from customer";
+    String SelectAllSQL="Select * from customer";
 
 
-  public void insert(Customer customer){
+    public void insert(Customer customer){
 
-      try(Connection con= DbConnection.getConnect().getConnection();
-         PreparedStatement ps=con.prepareStatement(InsertSQL)){
+        try(Connection con= DbConnection.getConnect().getConnection();
+            PreparedStatement ps=con.prepareStatement(InsertSQL)){
 
-          ps.setString(INSERT_CUSTOMER_NAME,customer.getCustomerName());
-          ps.setDate(INSERT_DATE_OF_BIRTH,customer.getDateOfBirth());
-          ps.setString(INSERT_GENDER,customer.getGender());
-          ps.setString(INSERT_PHONE_NO,customer.getPhoneNo());
-          ps.setString(INSERT_EMAIL,customer.getEmail());
-          ps.setString(INSERT_ADDRESS,customer.getAddress());
-          ps.setString(INSERT_AADHAR_NO,customer.getAadharNo());
-          ps.setString(INSERT_CUSTOMER_STATUS, customer.getCustomerStatus());
+            ps.setString(INSERT_CUSTOMER_NAME,customer.getCustomerName());
+            ps.setDate(INSERT_DATE_OF_BIRTH,java.sql.Date.valueOf(customer.getDateOfBirth()));
+            ps.setString(INSERT_GENDER,customer.getGender());
+            ps.setString(INSERT_PHONE_NO,customer.getPhoneNo());
+            ps.setString(INSERT_EMAIL,customer.getEmail());
+            ps.setString(INSERT_ADDRESS,customer.getAddress());
+            ps.setString(INSERT_AADHAR_NO,customer.getAadharNo());
+            ps.setString(INSERT_CUSTOMER_STATUS, customer.getCustomerStatus());
 
-          int changedRows=ps.executeUpdate();
+            int changedRows=ps.executeUpdate();
 
-          if(changedRows==0){
-              log.error("Insert failed,fields are not inserted in customer:{}",customer.getCustomerId());
-          }
+            if(changedRows==0){
+                log.error("Insert failed,fields are not inserted in customer:{}",customer.getCustomerId());
+            }
 
-          else{
-              log.info("sucessfully values are inserted in customer:{}",customer.getCustomerId());
-          }
+            else{
+                log.info("sucessfully values are inserted in customer:{}",customer.getCustomerId());
+            }
 
-      } catch (SQLException e) {
-          throw new RuntimeException(e);
-      }
-  }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Customer> findAll() throws SQLException {
+        List<Customer> customerList=new ArrayList<>();
+        try(Connection con= DbConnection.getConnect().getConnection();
+            PreparedStatement ps=con.prepareStatement(SelectAllSQL)){
+
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){
+                customerList.add(mapping(rs));
+            }
+            log.info("successfully fetched customer details,count={}", customerList.size());
+            return  customerList;
+        } catch (SQLException e) {
+            throw new DataException("Failed to fetch customer details",e);
+        }
+    }
+
+
+    public Customer mapping(ResultSet rs) throws SQLException {
+        Customer customer=new Customer();
+
+        customer.setCustomerId(rs.getLong("customer_id"));
+        customer.setCustomerName(rs.getString("customer_name"));
+        customer.setDateOfBirth(rs.getDate("date_of_birth").toLocalDate());
+        customer.setGender(rs.getString("gender"));
+        customer.setPhoneNo(rs.getString("phone_no"));
+        customer.setEmail(rs.getString("email"));
+        customer.setAddress(rs.getString("address"));
+        customer.setAadharNo(rs.getString("aadhar_no"));
+        customer.setCustomerStatus(rs.getString("customer_status"));
+
+        return customer;
+    }
 }

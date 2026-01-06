@@ -1,10 +1,9 @@
 package org.bank.account.servlet;
 
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bank.account.model.Account;
-import org.bank.account.model.Customer;
 import org.bank.account.service.AccountService;
-import org.bank.account.service.CustomerService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/account")
 public class AccountServlet extends HttpServlet {
@@ -40,4 +40,22 @@ public class AccountServlet extends HttpServlet {
 
 
     }
+
+    @Override
+    public void doGet(HttpServletRequest request,HttpServletResponse response){
+
+        try{
+            long customerId=Long.parseLong(request.getParameter("customerId"));
+
+            List<Account> account=accountService.getAccountByCustomerId(customerId);
+            ObjectMapper mapper=new ObjectMapper();
+            String json=mapper.writeValueAsString(account);
+            response.setStatus(HttpServletResponse.SC_ACCEPTED);
+            response.getWriter().write(json);
+
+        } catch (Exception e) {
+            log.error("failed",e);
+        }
+    }
+
 }

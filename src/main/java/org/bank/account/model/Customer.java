@@ -2,11 +2,12 @@ package org.bank.account.model;
 
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class Customer {
     private long customerId;
     private String customerName;
-    private Date dateOfBirth;
+    private LocalDate dateOfBirth;
     private String gender;
     private String phoneNo;
     private String email;
@@ -32,13 +33,7 @@ public class Customer {
         this.customerName = customerName;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
-    }
 
-    public void setDateOfBirth(Date dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
 
     public String getGender() {
         return gender;
@@ -81,6 +76,13 @@ public class Customer {
         this.customerStatus = customerStatus;
     }
 
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
 
 }
