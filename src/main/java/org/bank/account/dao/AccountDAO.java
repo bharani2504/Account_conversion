@@ -27,12 +27,14 @@ public class AccountDAO {
 
     static  final int GET_ACCOUNT_BY_CUSTOMERID=1;
 
+    static final int UPDATE_ACCOUNT_TYPE=1;
+
     String InsertSQL="Insert into account(customer_id,account_number,account_type,account_status)" +
             "VALUES(?,?,?,?)";
 
-    String GetByCustomerIdSql = "SELECT * FROM account WHERE customer_id = ?";
+    String GetByCustomerIdSQL = "SELECT * FROM account WHERE customer_id = ?";
 
-
+    String UpdateSQL="Update Account SET account_type='MAJOR' WHERE customer_id = ? and account_type='MINOR'";
 
 
     public void insert(Account account){
@@ -63,7 +65,7 @@ public class AccountDAO {
     public List<Account> getAccountsByCustomerId(long customerID) throws SQLException {
         List<Account> AccountList=new ArrayList<>();
         try(Connection con= DbConnection.getConnect().getConnection();
-            PreparedStatement ps=con.prepareStatement(GetByCustomerIdSql)){
+            PreparedStatement ps=con.prepareStatement(GetByCustomerIdSQL)){
 
             ps.setLong(GET_ACCOUNT_BY_CUSTOMERID,customerID);
             ResultSet rs=ps.executeQuery();
@@ -86,5 +88,18 @@ public class AccountDAO {
         account.setAccountType(rs.getString("account_type"));
         account.setAccountStatus(rs.getString("account_status"));
         return account;
+    }
+
+
+    public int UpdateAccount(long customerID ) throws SQLException {
+        try (Connection con = DbConnection.getConnect().getConnection();
+             PreparedStatement ps = con.prepareStatement(UpdateSQL)) {
+
+            ps.setLong(UPDATE_ACCOUNT_TYPE, customerID);
+            return ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new DataException("failed to convert account from minor to major");
+        }
     }
 }

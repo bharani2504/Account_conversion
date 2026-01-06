@@ -4,6 +4,7 @@ import org.bank.account.dao.CustomerDAO;
 import org.bank.account.model.Customer;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class CustomerService {
 
@@ -13,7 +14,7 @@ public class CustomerService {
         customerDAO.insert(customer);
     }
 
-    public Object findAll() throws SQLException {
+    public List<Customer> findAll() throws SQLException {
         return customerDAO.findAll();
     }
 

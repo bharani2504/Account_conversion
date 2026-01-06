@@ -5,10 +5,10 @@ public class Nominee {
     private long accountId;
     private String nomineeName;
     private String relationship;
-    private boolean isGuardian;
+    private boolean guardian;
 
     public Nominee(){
-        this.isGuardian=true;
+        this.guardian =true;
     }
     public long getNomineeId() {
         return nomineeId;
@@ -41,12 +41,12 @@ public class Nominee {
     public void setRelationship(String relationship) {
         this.relationship = relationship;
     }
+
     public boolean isGuardian() {
-        return isGuardian;
+        return guardian;
     }
 
     public void setGuardian(boolean guardian) {
-        isGuardian = guardian;
+        this.guardian = guardian;
     }
-
 }

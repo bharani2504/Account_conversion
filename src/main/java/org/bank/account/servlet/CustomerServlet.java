@@ -58,9 +58,6 @@ public class CustomerServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response){
         try {
             response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            response.setStatus(HttpServletResponse.SC_OK);
-
             mapCustomer(response);
             log.info("Fetched All customer details successfully");
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
