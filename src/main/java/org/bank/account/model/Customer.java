@@ -1,7 +1,7 @@
 package org.bank.account.model;
 
 
-import java.sql.Date;
+
 import java.time.LocalDate;
 
 public class Customer {
@@ -20,6 +20,9 @@ public class Customer {
     public Customer(){
        this.customerStatus="ACTIVE";
    }
+
+
+
     public long getCustomerId() {
         return customerId;
     }

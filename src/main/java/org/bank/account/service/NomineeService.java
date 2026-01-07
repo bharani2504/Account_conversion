@@ -1,7 +1,6 @@
 package org.bank.account.service;
 
 import org.bank.account.dao.NomineeDAO;
-import org.bank.account.model.Account;
 import org.bank.account.model.Nominee;
 
 import java.sql.SQLException;

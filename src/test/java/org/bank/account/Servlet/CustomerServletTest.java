@@ -1,11 +1,12 @@
 package org.bank.account.Servlet;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.bank.account.exception.DataException;
-import org.bank.account.model.Account;
-import org.bank.account.service.AccountService;
-import org.bank.account.servlet.AccountServlet;
+import org.bank.account.model.Customer;
+
+import org.bank.account.service.CustomerService;
+import org.bank.account.servlet.CustomerServlet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,43 +20,55 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.reflect.Field;
-import java.util.Collections;
+import java.time.LocalDate;
 
 import static org.mockito.Mockito.*;
 
-public class AccountServletTest {
+public class CustomerServletTest {
 
     ObjectMapper objectMapper=new ObjectMapper();
-    private AccountServlet accountServlet;
+    private CustomerServlet customerServlet;
     private HttpServletRequest request;
     private HttpServletResponse response;
-    private AccountService accountService;
-
+    private CustomerService customerService;
 
     @BeforeEach
     void set() throws Exception {
-        accountServlet = new AccountServlet();
+        customerServlet=new CustomerServlet();
         request=mock(HttpServletRequest.class);
         response=mock(HttpServletResponse.class);
-        accountService=mock(AccountService.class);
+        customerService=mock(CustomerService.class);
 
-        Field field = AccountServlet.class.getDeclaredField("accountService");
+        Field field = CustomerServlet.class.getDeclaredField("customerService");
         field.setAccessible(true);
-        field.set(accountServlet,accountService);
+        field.set(customerServlet,customerService);
     }
 
     @Test
     void testdoPost()throws Exception{
-        Account account=new Account();
-        account.setAccountId(1);
-        account.setCustomerId(1);
-        account.setAccountNumber("257413941");
-        account.setAccountType("MINOR");
-        account.setAccountStatus("ACTIVE");
+        Customer customer=new Customer();
 
+        customer.setCustomerId(1);
+        customer.setCustomerName("Bharani");
+        customer.setDateOfBirth(LocalDate.parse("2000-01-15"));
+        customer.setGender("MALE");
+        customer.setPhoneNo("6938727120");
+        customer.setEmail("bharanidharan963@gmail.com");
+        customer.setAddress("chennai,Tamil Nadu");
+        customer.setAadharNo("26671541044");
+        customer.setCustomerStatus("Active");
 
-        String json=objectMapper.writeValueAsString(account);
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+
+        String json=objectMapper.writeValueAsString(customer);
         when(request.getInputStream()).thenReturn(inputStream(json));
+
+        customerServlet.doPost(request,response);
+
+        verify(customerService).insert(any(Customer.class));
+        verify(response).setStatus(HttpServletResponse.SC_CREATED);
+
     }
 
     @Test
@@ -63,7 +76,7 @@ public class AccountServletTest {
         when(request.getInputStream()).thenThrow(IOException.class);
 
         try {
-            accountServlet.doPost(request,response);
+            customerServlet.doPost(request,response);
         }
         catch (DataException e){
             verify(response).setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -71,22 +84,16 @@ public class AccountServletTest {
     }
 
     @Test
-    void testDoGetValidIdReturnsAccount() throws Exception {
-        Account account = new Account();
-        account.setCustomerId(1);
+    void testDoGet() throws Exception {
 
-        when(request.getParameter("customerId")).thenReturn("1");
-        when(accountService.getAccountByCustomerId(1L)).thenReturn(Collections.singletonList(account));
-        when(response.getWriter()).thenReturn(new PrintWriter(new StringWriter()));
 
-        accountServlet.doGet(request, response);
+        StringWriter writer = new StringWriter();
+        when(response.getWriter()).thenReturn(new PrintWriter(writer));
 
-        verify(accountService).getAccountByCustomerId(1L);
-        verify(response).setStatus(HttpServletResponse.SC_ACCEPTED);
+        customerServlet.doGet(request, response);
 
+        verify(customerService).findAll();
     }
-
-
 
     private ServletInputStream inputStream(String json){
         ByteArrayInputStream bs =new ByteArrayInputStream(json.getBytes());
@@ -114,6 +121,5 @@ public class AccountServletTest {
         };
 
     }
-
 
 }

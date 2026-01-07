@@ -1,11 +1,10 @@
 package org.bank.account.Servlet;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bank.account.exception.DataException;
-import org.bank.account.model.Account;
-import org.bank.account.service.AccountService;
-import org.bank.account.servlet.AccountServlet;
+import org.bank.account.model.Nominee;
+import org.bank.account.service.NomineeService;
+import org.bank.account.servlet.NomineeServlet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +12,6 @@ import javax.servlet.ReadListener;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,39 +20,41 @@ import java.lang.reflect.Field;
 import java.util.Collections;
 
 import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
-public class AccountServletTest {
+public class NomineeServletTest {
 
     ObjectMapper objectMapper=new ObjectMapper();
-    private AccountServlet accountServlet;
+    private NomineeServlet nomineeServlet;
     private HttpServletRequest request;
     private HttpServletResponse response;
-    private AccountService accountService;
+    private NomineeService nomineeService;
 
 
     @BeforeEach
     void set() throws Exception {
-        accountServlet = new AccountServlet();
+        nomineeServlet = new NomineeServlet();
         request=mock(HttpServletRequest.class);
         response=mock(HttpServletResponse.class);
-        accountService=mock(AccountService.class);
+        nomineeService=mock(NomineeService.class);
 
-        Field field = AccountServlet.class.getDeclaredField("accountService");
+        Field field = NomineeServlet.class.getDeclaredField("nomineeService");
         field.setAccessible(true);
-        field.set(accountServlet,accountService);
+        field.set(nomineeServlet,nomineeService);
     }
 
     @Test
     void testdoPost()throws Exception{
-        Account account=new Account();
-        account.setAccountId(1);
-        account.setCustomerId(1);
-        account.setAccountNumber("257413941");
-        account.setAccountType("MINOR");
-        account.setAccountStatus("ACTIVE");
+        Nominee nominee=new Nominee();
+        nominee.setNomineeId(1);
+        nominee.setAccountId(1);
+        nominee.setNomineeName("karpagam");
+        nominee.setRelationship("Mother");
+        nominee.setGuardian(true);
 
 
-        String json=objectMapper.writeValueAsString(account);
+        String json=objectMapper.writeValueAsString(nominee);
         when(request.getInputStream()).thenReturn(inputStream(json));
     }
 
@@ -63,7 +63,7 @@ public class AccountServletTest {
         when(request.getInputStream()).thenThrow(IOException.class);
 
         try {
-            accountServlet.doPost(request,response);
+            nomineeServlet.doPost(request,response);
         }
         catch (DataException e){
             verify(response).setStatus(HttpServletResponse.SC_BAD_REQUEST);
@@ -71,17 +71,17 @@ public class AccountServletTest {
     }
 
     @Test
-    void testDoGetValidIdReturnsAccount() throws Exception {
-        Account account = new Account();
-        account.setCustomerId(1);
+    void testDoGetValidIdReturnNominee() throws Exception {
+        Nominee nominee=new Nominee();
+        nominee.setAccountId(1);
 
-        when(request.getParameter("customerId")).thenReturn("1");
-        when(accountService.getAccountByCustomerId(1L)).thenReturn(Collections.singletonList(account));
+        when(request.getParameter("accountId")).thenReturn("1");
+        when(nomineeService.getNomineeByAccountID(1L)).thenReturn(Collections.singletonList(nominee));
         when(response.getWriter()).thenReturn(new PrintWriter(new StringWriter()));
 
-        accountServlet.doGet(request, response);
+        nomineeServlet.doGet(request,response);
 
-        verify(accountService).getAccountByCustomerId(1L);
+        verify(nomineeService).getNomineeByAccountID(1L);
         verify(response).setStatus(HttpServletResponse.SC_ACCEPTED);
 
     }
@@ -114,6 +114,9 @@ public class AccountServletTest {
         };
 
     }
+
+
+
 
 
 }

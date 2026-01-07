@@ -21,7 +21,6 @@ public class AccountServlet extends HttpServlet {
     static Logger log= LoggerFactory.getLogger(AccountServlet.class);
 
     private final ObjectMapper objectMapper = new ObjectMapper();
-
     private final AccountService accountService=new AccountService();
 
     @Override
@@ -48,8 +47,7 @@ public class AccountServlet extends HttpServlet {
             long customerId=Long.parseLong(request.getParameter("customerId"));
 
             List<Account> account=accountService.getAccountByCustomerId(customerId);
-            ObjectMapper mapper=new ObjectMapper();
-            String json=mapper.writeValueAsString(account);
+            String json=objectMapper.writeValueAsString(account);
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
             response.getWriter().write(json);
 
