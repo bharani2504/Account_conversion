@@ -28,7 +28,7 @@ public class CustomerDAOTest {
         try (
                 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Account_conversion", "root", "2006");) {
             Statement stmt = con.createStatement();
-            stmt.execute("Delete from nominee");
+
             stmt.execute("Delete from account");
             stmt.execute("Delete from customer");
         }

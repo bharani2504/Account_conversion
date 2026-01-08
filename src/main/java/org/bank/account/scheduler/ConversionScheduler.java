@@ -1,6 +1,5 @@
 package org.bank.account.scheduler;
 
-import org.bank.account.dao.CustomerDAO;
 import org.bank.account.model.Customer;
 import org.bank.account.service.AccountService;
 import org.bank.account.service.CustomerService;
@@ -12,12 +11,16 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
 
 public class ConversionScheduler {
 
     private static final Logger log= LoggerFactory.getLogger(ConversionScheduler.class);
+    private static final long PERIOD = TimeUnit.DAYS.toMillis(1);
+    private static final long DELAY =0L;
     private final CustomerService customerService=new CustomerService();
     private final AccountService accountService=new AccountService();
+
 
     public void start(){
 
@@ -38,6 +41,6 @@ public class ConversionScheduler {
                 }
 
             }
-        },0, 24 * 60 * 60 * 1000);
+        }, DELAY, PERIOD);
     }
 }

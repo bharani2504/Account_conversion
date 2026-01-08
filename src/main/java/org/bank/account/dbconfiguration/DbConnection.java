@@ -12,7 +12,7 @@ public  final class DbConnection {
 
     private DbConnection() {
     }
-  private  static final HikariDataSource datasource ;
+  private static final HikariDataSource datasource ;
 
      static {
 
@@ -20,8 +20,9 @@ public  final class DbConnection {
             Properties props=new Properties();
 
 
-            InputStream input=DbConnection.class.getClassLoader().
-                    getResourceAsStream("db.properties");
+            InputStream input=Thread.currentThread().getContextClassLoader()
+                    .getResourceAsStream("db.properties");
+
 
             if(input==null){
                 throw new DataException("db properties files are not found ");
