@@ -71,7 +71,7 @@ public class AccountServiceTest {
         accountService.UpdateAccount(customer);
 
         verify(accountDAO).UpdateAccount(1);
-        verify(nomineeDAO).getNomineeByAccountId(1);
+        verify(nomineeDAO).UpdateNominee(1);
     }
 
     @Test
@@ -86,6 +86,6 @@ public class AccountServiceTest {
         accountService.UpdateAccount(customer);
 
         verify(accountDAO).UpdateAccount(1);
-        verify(nomineeDAO).getNomineeByAccountId(1);
+        verify(nomineeDAO).UpdateNominee(1);
     }
 }

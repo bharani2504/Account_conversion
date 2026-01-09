@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/account")
+
 public class AccountServlet extends HttpServlet {
     private static final long serialVersionUID=1L;
 
@@ -55,5 +55,4 @@ public class AccountServlet extends HttpServlet {
             log.error("failed",e);
         }
     }
-
 }

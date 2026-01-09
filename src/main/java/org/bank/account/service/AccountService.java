@@ -36,7 +36,7 @@ public class AccountService {
         if(age>=18){
             int updated=accountDAO.UpdateAccount(customer.getCustomerId());
             if(updated>0){
-                nomineeDAO.getNomineeByAccountId(customer.getCustomerId());
+                nomineeDAO.UpdateNominee(customer.getCustomerId());
             }
 
         }

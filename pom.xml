@@ -10,16 +10,19 @@
   <name>Account_conversion</name>
   <url>http://maven.apache.org</url>
 
-  <properties>
+   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <java.version>21</java.version>
   </properties>
 
   <dependencies>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
-      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -117,9 +120,9 @@
         <version>3.11.0</version>
         <configuration>
           <!--suppress UnresolvedMavenProperty -->
-          <source>9</source>
+          <source>17</source>
           <!--suppress UnresolvedMavenProperty -->
-          <target>9</target>
+          <target>17</target>
         </configuration>
       </plugin>
 
