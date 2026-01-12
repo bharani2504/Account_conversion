@@ -15,4 +15,8 @@ public class NomineeService {
     public List<Nominee> getNomineeByAccountID(long accountId) throws SQLException {
         return nomineeDAO.getNomineeByAccountId(accountId);
     }
+
+    public void delete(long accountId) {
+        nomineeDAO.delete(accountId);
+    }
 }

@@ -25,7 +25,7 @@ public class NomineeDAO {
     static final int INSERT_IS_GUARDIAN =4;
 
     static final int UPDATE_GUARDIAN=1;
-
+    static final int DELETE_BRANCH_ID=1;
     static final int GET_ACCOUNT_BY_ACCOUNTID=1;
     static String InsertSQL="Insert into nominee(account_id,nominee_name,relationship, is_guardian)" +
             "VALUES(?,?,?,?)";
@@ -33,6 +33,8 @@ public class NomineeDAO {
     static  String GetByAccountIdSQL=" Select * from nominee where account_id=? ";
     static String UpdateGuardianSQL="Update nominee set is_guardian=False " +
             "where account_id IN (Select account_id from account where customer_id = ?)";
+
+    static String DELETE_SQL= "Select * from nominee where account_id=?";
 
 
     public static void insert(Nominee nominee){
@@ -97,5 +99,26 @@ public class NomineeDAO {
             throw new DataException("failed to update guardian status",e);
         }
     }
+
+    public void delete(long accountId) {
+        try(Connection con = DbConnection.getConnect().getConnection();
+            PreparedStatement ps = con.prepareStatement(DELETE_SQL)){
+            ps.setLong(DELETE_BRANCH_ID, accountId);
+
+            int rows = ps.executeUpdate();
+            if (rows == 0) {
+                log.error("Delete failed: no nominee found with this id:{}", accountId);
+
+            } else {
+                log.info("Successfully deleted nominee with id:{}", accountId);
+
+            }
+
+
+        } catch (SQLException e) {
+            throw new DataException("Failed to Delete Branch ",e);
+        }
+    }
+
 
 }

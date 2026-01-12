@@ -56,7 +56,18 @@ public class NomineeServlet extends HttpServlet {
             log.error("failed",e);
         }
     }
-
+    @Override
+    public void doDelete(HttpServletRequest request , HttpServletResponse response){
+        try{
+            long accountId=Long.parseLong(request.getParameter("accountId"));
+            nomineeService.delete(accountId);
+            response.setStatus(HttpServletResponse.SC_ACCEPTED);
+            log.info("nominee Deleted Successfully..");
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            log.error("Failed to delete nominee, EXCEPTION: ",e);
+        }
+    }
 
 
 }
