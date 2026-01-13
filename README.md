@@ -103,7 +103,6 @@ MinorToMajorAccountConversion is a Java Servlet–based banking application that
   "gender": "Male",
   "phoneNo": "9876543210",
   "email": "bharani@gmail.com",
-  "phoneNo": "9876543210",
   "address": "Chennai",
   "aadharNo":"697880289845"
 
