@@ -57,7 +57,7 @@ public class NomineeDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DataException("failed to insert",e);
         }
     }
     public List<Nominee> getNomineeByAccountId(long accountId) throws SQLException {

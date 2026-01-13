@@ -26,7 +26,7 @@ public class CustomerDAOTest {
         customerDAO = new CustomerDAO();
 
         try (
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Account_conversion", "root", "250408");) {
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Account_conversion", "root", "2006");) {
             Statement stmt = con.createStatement();
 
             stmt.execute("Delete from account");

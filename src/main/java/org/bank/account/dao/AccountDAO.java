@@ -58,7 +58,7 @@ public class AccountDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DataException("Failed to insert",e);
         }
     }
 

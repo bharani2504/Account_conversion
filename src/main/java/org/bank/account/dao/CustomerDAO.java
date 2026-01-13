@@ -59,7 +59,7 @@ public class CustomerDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DataException("failed to insert",e);
         }
     }
 

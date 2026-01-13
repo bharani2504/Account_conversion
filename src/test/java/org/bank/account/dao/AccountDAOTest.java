@@ -3,6 +3,7 @@ package org.bank.account.dao;
 
 import org.bank.account.model.Account;
 import org.bank.account.model.Customer;
+import org.bank.account.model.User;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,6 +22,7 @@ public class AccountDAOTest {
 
     private AccountDAO accountDAO;
     private CustomerDAO customerDAO;
+    private UserDAO userDAO;
 
 
     @BeforeEach
@@ -28,16 +30,19 @@ public class AccountDAOTest {
 
         accountDAO=new AccountDAO();
         customerDAO = new CustomerDAO();
+        userDAO=new UserDAO();
 
 
         try (
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Account_conversion", "root", "250408");) {
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Account_conversion", "root", "2006");) {
             Statement stmt = con.createStatement();
             stmt.execute("Delete from nominee");
             stmt.execute("Delete from account");
+            stmt.execute("delete from customer");
         }
 
     }
+
 
 
     private long createCustomer() throws SQLException {

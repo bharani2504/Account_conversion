@@ -1,5 +1,6 @@
 package org.bank.account.scheduler;
 
+import org.bank.account.exception.DataException;
 import org.bank.account.model.Customer;
 import org.bank.account.service.AccountService;
 import org.bank.account.service.CustomerService;
@@ -37,7 +38,7 @@ public class ConversionScheduler {
                         accountService.UpdateAccount(customer);
                     }
                 } catch (SQLException e) {
-                    throw new RuntimeException(e);
+                    throw new DataException("failed to get the details",e);
                 }
 
             }

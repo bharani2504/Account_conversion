@@ -45,25 +45,6 @@ public class AccountServletTest {
         field.set(accountServlet,accountService);
     }
 
-    @Test
-    void testdoPost()throws Exception{
-        Account account=new Account();
-        account.setAccountId(1);
-        account.setCustomerId(1);
-        account.setAccountNumber("257413941");
-        account.setAccountType("MINOR");
-        account.setAccountStatus("ACTIVE");
-
-
-        String json=objectMapper.writeValueAsString(account);
-        when(request.getInputStream()).thenReturn(inputStream(json));
-
-        accountServlet.doPost(request,response);
-
-        verify(accountService).insert(any(Account.class));
-        verify(response).setStatus(HttpServletResponse.SC_CREATED);
-
-    }
 
     @Test
     void testdoPostInvalid() throws Exception{

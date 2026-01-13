@@ -46,7 +46,7 @@ public class UserDAO {
             }
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            throw new DataException("failed to add",e);
         }
     }
 
