@@ -698,3 +698,273 @@ java.io.IOException: null
 2026-01-12 17:10:41 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
 2026-01-12 17:10:41 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
 java.io.IOException: null
+2026-01-12 21:51:51 ERROR org.bank.account.servlet.AccountServlet - Failed to insert value in Account, Exceptiom : 
+java.io.IOException: null
+2026-01-12 21:51:52 INFO  org.bank.account.servlet.CustomerServlet - Customer created successfully:1
+2026-01-12 21:51:52 INFO  org.bank.account.servlet.CustomerServlet - Fetched All customer details successfully
+2026-01-12 21:51:52 ERROR org.bank.account.servlet.CustomerServlet - Failed to insert value in Customer, Exceptiom : 
+java.io.IOException: null
+2026-01-12 21:51:52 INFO  org.bank.account.servlet.LoginServlet - Token Generated
+2026-01-12 21:51:52 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
+2026-01-12 21:51:52 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
+java.io.IOException: null
+2026-01-12 21:53:53 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 21:53:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 21:54:00 ERROR org.bank.account.servlet.AccountServlet - Failed to insert value in Account, Exceptiom : 
+java.io.IOException: null
+2026-01-12 21:54:00 INFO  org.bank.account.servlet.CustomerServlet - Customer created successfully:1
+2026-01-12 21:54:00 INFO  org.bank.account.servlet.CustomerServlet - Fetched All customer details successfully
+2026-01-12 21:54:00 ERROR org.bank.account.servlet.CustomerServlet - Failed to insert value in Customer, Exceptiom : 
+java.io.IOException: null
+2026-01-12 21:54:00 INFO  org.bank.account.servlet.LoginServlet - Token Generated
+2026-01-12 21:54:00 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
+2026-01-12 21:54:00 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
+java.io.IOException: null
+2026-01-12 21:56:53 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 21:56:53 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 21:59:44 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 21:59:44 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 22:13:46 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 22:13:46 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 22:13:46 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3277e499
+2026-01-12 22:13:46 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-12 22:13:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:13:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 22:13:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 22:13:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:13:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:13:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 22:13:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 22:13:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:13:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:13:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 22:13:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 22:13:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:14:09 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 22:14:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 22:14:09 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63f34b70
+2026-01-12 22:14:09 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-12 22:14:09 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:14:09 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 22:14:09 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:14:09 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:18 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 22:15:18 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 22:15:19 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@11170228
+2026-01-12 22:15:19 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=4
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 22:15:19 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 22:15:19 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 22:15:24 ERROR org.bank.account.servlet.AccountServlet - Failed to insert value in Account, Exceptiom : 
+java.io.IOException: null
+2026-01-12 22:15:25 INFO  org.bank.account.servlet.CustomerServlet - Customer created successfully:1
+2026-01-12 22:15:25 INFO  org.bank.account.servlet.CustomerServlet - Fetched All customer details successfully
+2026-01-12 22:15:25 ERROR org.bank.account.servlet.CustomerServlet - Failed to insert value in Customer, Exceptiom : 
+java.io.IOException: null
+2026-01-12 22:15:25 INFO  org.bank.account.servlet.LoginServlet - Token Generated
+2026-01-12 22:15:25 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
+2026-01-12 22:15:25 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:05:45 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 23:05:45 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 23:05:46 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49925d21
+2026-01-12 23:05:46 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=6
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=7
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=8
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:05:46 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:05:46 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:05:51 ERROR org.bank.account.servlet.AccountServlet - Failed to insert value in Account, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:05:52 INFO  org.bank.account.servlet.CustomerServlet - Customer created successfully:1
+2026-01-12 23:05:52 INFO  org.bank.account.servlet.CustomerServlet - Fetched All customer details successfully
+2026-01-12 23:05:52 ERROR org.bank.account.servlet.CustomerServlet - Failed to insert value in Customer, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:05:52 INFO  org.bank.account.servlet.LoginServlet - Token Generated
+2026-01-12 23:05:52 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
+2026-01-12 23:05:52 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:07:35 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 23:07:35 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 23:07:35 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49925d21
+2026-01-12 23:07:35 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=4
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=5
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=6
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:07:35 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:07:35 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:07:40 ERROR org.bank.account.servlet.AccountServlet - Failed to insert value in Account, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:07:40 INFO  org.bank.account.servlet.CustomerServlet - Customer created successfully:1
+2026-01-12 23:07:40 INFO  org.bank.account.servlet.CustomerServlet - Fetched All customer details successfully
+2026-01-12 23:07:40 ERROR org.bank.account.servlet.CustomerServlet - Failed to insert value in Customer, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:07:41 INFO  org.bank.account.servlet.LoginServlet - Token Generated
+2026-01-12 23:07:41 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
+2026-01-12 23:07:41 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:16:28 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 23:16:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 23:16:28 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49925d21
+2026-01-12 23:16:28 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-12 23:16:28 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:16:28 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=4
+2026-01-12 23:16:28 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:16:28 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:28 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:16:28 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=5
+2026-01-12 23:16:28 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:16:28 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:28 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:16:28 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=6
+2026-01-12 23:16:28 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:16:28 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:16:29 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:16:29 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:16:34 ERROR org.bank.account.servlet.AccountServlet - Failed to insert value in Account, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:16:34 INFO  org.bank.account.servlet.CustomerServlet - Customer created successfully:1
+2026-01-12 23:16:34 INFO  org.bank.account.servlet.CustomerServlet - Fetched All customer details successfully
+2026-01-12 23:16:34 ERROR org.bank.account.servlet.CustomerServlet - Failed to insert value in Customer, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:16:34 INFO  org.bank.account.servlet.LoginServlet - Token Generated
+2026-01-12 23:16:34 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
+2026-01-12 23:16:34 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:18:49 WARN  com.zaxxer.hikari.HikariConfig - HikariPool-1 - idleTimeout is less than 10000ms, setting to default 600000ms.
+2026-01-12 23:18:49 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-12 23:18:49 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@49925d21
+2026-01-12 23:18:49 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-12 23:18:49 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:18:49 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=4
+2026-01-12 23:18:49 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:18:49 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:49 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:18:49 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=5
+2026-01-12 23:18:49 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:18:49 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=6
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=2
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - sucessfully values are inserted in customer:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:18:50 INFO  org.bank.account.dao.CustomerDAO - successfully fetched customer details,count=3
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in account:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - sucessfully values are inserted in nominee:0
+2026-01-12 23:18:50 INFO  org.bank.account.dao.AccountDAO - successfully fetched customer details,count=1
+2026-01-12 23:18:55 ERROR org.bank.account.servlet.AccountServlet - Failed to insert value in Account, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:18:55 INFO  org.bank.account.servlet.CustomerServlet - Customer created successfully:1
+2026-01-12 23:18:55 INFO  org.bank.account.servlet.CustomerServlet - Fetched All customer details successfully
+2026-01-12 23:18:55 ERROR org.bank.account.servlet.CustomerServlet - Failed to insert value in Customer, Exceptiom : 
+java.io.IOException: null
+2026-01-12 23:18:55 INFO  org.bank.account.servlet.LoginServlet - Token Generated
+2026-01-12 23:18:55 INFO  org.bank.account.servlet.LoginServlet - Registered Successfully
+2026-01-12 23:18:55 ERROR org.bank.account.servlet.NomineeServlet - Failed to insert value in nominee, Exceptiom : 
+java.io.IOException: null

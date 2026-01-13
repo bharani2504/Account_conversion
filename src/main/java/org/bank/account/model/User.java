@@ -2,16 +2,16 @@ package org.bank.account.model;
 
 public class User {
 
-    private int id;
+    private long userId;
     private String username;
     private String password;
 
-    public int getId() {
-        return id;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {

@@ -31,7 +31,7 @@ public class AccountDAOTest {
 
 
         try (
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Account_conversion", "root", "2006");) {
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Account_conversion", "root", "250408");) {
             Statement stmt = con.createStatement();
             stmt.execute("Delete from nominee");
             stmt.execute("Delete from account");
@@ -44,6 +44,7 @@ public class AccountDAOTest {
 
         Customer customer = new Customer();
 
+        customer.setUserId(1);
         customer.setCustomerName("Bharani");
         customer.setDateOfBirth(LocalDate.of(2000, 1, 15));
         customer.setGender("MALE");

@@ -10,10 +10,10 @@
 
 
 
-    <filter>
+     <filter>
         <filter-name>RegisterFilter</filter-name>
         <filter-class>org.bank.account.filter.RegisterFilter</filter-class>
-    </filter>
+     </filter>
     <filter-mapping>
         <filter-name>RegisterFilter</filter-name>
         <url-pattern>/*</url-pattern>

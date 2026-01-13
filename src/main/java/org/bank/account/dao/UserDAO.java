@@ -38,11 +38,11 @@ public class UserDAO {
             int changedRows=ps.executeUpdate();
 
             if(changedRows==0){
-                log.error("Insert failed,fields are not inserted in user:{}",user.getId());
+                log.error("Insert failed,fields are not inserted in user:{}",user.getUserId());
             }
 
             else{
-                log.info("sucessfully values are inserted in account:{}",user.getId());
+                log.info("sucessfully values are inserted in account:{}",user.getUserId());
             }
 
         } catch (SQLException e) {

@@ -2,6 +2,7 @@ package org.bank.account.Servlet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bank.account.exception.DataException;
+import org.bank.account.model.Account;
 import org.bank.account.model.Nominee;
 import org.bank.account.service.NomineeService;
 import org.bank.account.servlet.NomineeServlet;
@@ -56,6 +57,11 @@ public class NomineeServletTest {
 
         String json=objectMapper.writeValueAsString(nominee);
         when(request.getInputStream()).thenReturn(inputStream(json));
+
+        nomineeServlet.doPost(request,response);
+
+        verify(nomineeService).insert(any(Nominee.class));
+        verify(response).setStatus(HttpServletResponse.SC_CREATED);
     }
 
     @Test

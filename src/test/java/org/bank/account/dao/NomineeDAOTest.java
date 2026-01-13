@@ -29,7 +29,7 @@ public class NomineeDAOTest {
         customerDAO = new CustomerDAO();
 
         try (Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/Account_conversion", "root", "2006")) {
+                "jdbc:mysql://localhost:3306/Account_conversion", "root", "250408")) {
 
             Statement stmt = con.createStatement();
             stmt.execute("DELETE FROM nominee");
@@ -41,6 +41,7 @@ public class NomineeDAOTest {
     private long createCustomer() throws Exception {
 
         Customer customer = new Customer();
+        customer.setUserId(1);
         customer.setCustomerName("Bharani");
         customer.setDateOfBirth(LocalDate.of(2000, 1, 15));
         customer.setGender("MALE");

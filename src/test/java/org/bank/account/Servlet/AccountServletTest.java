@@ -4,6 +4,7 @@ package org.bank.account.Servlet;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.bank.account.exception.DataException;
 import org.bank.account.model.Account;
+import org.bank.account.model.Customer;
 import org.bank.account.service.AccountService;
 import org.bank.account.servlet.AccountServlet;
 import org.junit.jupiter.api.BeforeEach;
@@ -56,6 +57,12 @@ public class AccountServletTest {
 
         String json=objectMapper.writeValueAsString(account);
         when(request.getInputStream()).thenReturn(inputStream(json));
+
+        accountServlet.doPost(request,response);
+
+        verify(accountService).insert(any(Account.class));
+        verify(response).setStatus(HttpServletResponse.SC_CREATED);
+
     }
 
     @Test

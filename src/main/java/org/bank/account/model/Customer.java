@@ -6,6 +6,7 @@ import java.time.LocalDate;
 
 public class Customer {
     private long customerId;
+    private long userId;
     private String customerName;
     private LocalDate dateOfBirth;
     private String gender;
@@ -28,6 +29,12 @@ public class Customer {
     }
     public void setCustomerId(long customerId) {
         this.customerId = customerId;
+    }
+    public long getUserId() {
+        return userId;
+    }
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
     public String getCustomerName() {
         return customerName;
