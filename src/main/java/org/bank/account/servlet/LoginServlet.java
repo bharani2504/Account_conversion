@@ -21,13 +21,19 @@ import java.io.IOException;
     private static final Logger LOG = LoggerFactory.getLogger(LoginServlet.class);
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        User user = objectMapper.readValue(request.getInputStream(), User.class);
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+       try{ User user = objectMapper.readValue(request.getInputStream(), User.class);
         userService.addUser(user);
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
         response.getWriter().write("User Registered Successfully");
         LOG.info("Registered Successfully");
-    }
+       }
+       catch (Exception e){
+           response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+           throw new DataException("Failed",e);
+       }
+       }
+
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
