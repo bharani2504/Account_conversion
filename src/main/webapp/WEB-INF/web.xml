@@ -62,18 +62,9 @@
             <servlet-name>nominee</servlet-name>
             <url-pattern>/nominee</url-pattern>
         </servlet-mapping>
+    <listener>
+        <listener-class>org.bank.account.scheduler.ConversionScheduler</listener-class>
+    </listener>
 
-        <servlet>
-            <servlet-name>startup</servlet-name>
-            <servlet-class>org.bank.account.servlet.SchedulerServlet</servlet-class>
-            <load-on-startup>1</load-on-startup>
-        </servlet>
-
-        <servlet-mapping>
-            <servlet-name>startup</servlet-name>
-            <url-pattern>/startup</url-pattern>
-        </servlet-mapping>
-
-
-   </web-app>
+</web-app>
 
