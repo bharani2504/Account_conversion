@@ -27,7 +27,7 @@ public class LoginFilter implements Filter {
 
         String uri = req.getRequestURI();
 
-        if (uri.contains("/user") || uri.contains("/startup")) {
+        if (uri.contains("/user/register") ||(uri.contains("/user/login"))) {
             chain.doFilter(request, response);
             return;
         }
@@ -55,10 +55,8 @@ public class LoginFilter implements Filter {
         } catch (Exception e) {
             res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             res.getWriter().write("Invalid token");
-            throw new DataException("failed",e);
 
         }
 
-        chain.doFilter(request, response);
     }
 }
