@@ -7,15 +7,9 @@ import org.bank.account.service.CustomerService;
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.sql.SQLException;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.concurrent.TimeUnit;
+
 
 public class Jobs implements Job {
 

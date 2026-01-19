@@ -24,7 +24,7 @@ public class ConversionScheduler implements ServletContextListener {
                     .build();
 
             Trigger trigger = TriggerBuilder.newTrigger()
-                    .withIdentity("appointmentDateTrigger", "group1")
+                    .withIdentity("ConversionTrigger", "group1")
                     .withSchedule(CronScheduleBuilder.cronSchedule("0 0 0 * * ?")).build();
 
             scheduler.start();
