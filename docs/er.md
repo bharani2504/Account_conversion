@@ -1,4 +1,5 @@
-erDiagram
+```mermaid
+  erDiagram
 
     USERS {
     BIGINT user_id PK
