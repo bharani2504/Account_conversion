@@ -3,7 +3,7 @@ erDiagram
 
 USERS {
     user_id BIGINT PK
-    username VARCHAR UNIQUE
+    username VARCHAR 
     password VARCHAR
     }
 
@@ -23,7 +23,7 @@ CUSTOMER {
 ACCOUNT {
     account_id BIGINT PK
     customer_id BIGINT FK
-    account_number VARCHAR UNIQUE
+    account_number VARCHAR 
     account_type VARCHAR
     account_status VARCHAR
 }
@@ -39,5 +39,4 @@ NOMINEE {
 USERS ||--|| CUSTOMER : has
 CUSTOMER ||--o{ ACCOUNT : owns
 ACCOUNT ||--o{ NOMINEE : has
-
 ```
