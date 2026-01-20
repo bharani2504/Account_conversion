@@ -1,41 +1,43 @@
 ```mermaid
-  erDiagram
+erDiagram
 
-    USERS {
-    BIGINT user_id PK
-    VARCHAR username UNIQUE
-    VARCHAR password
+USERS {
+    user_id BIGINT PK
+    username VARCHAR UNIQUE
+    password VARCHAR
     }
 
-    CUSTOMER {
-        BIGINT customer_id PK
-        BIGINT user_id FK
-        VARCHAR customer_name
-        DATE date_of_birth
-        VARCHAR gender
-        VARCHAR phone_no
-        VARCHAR email
-        VARCHAR address
-        VARCHAR aadhar_no
-        VARCHAR customer_status
-    }
+CUSTOMER {
+    customer_id BIGINT PK
+    user_id BIGINT FK
+    customer_name VARCHAR
+    date_of_birth DATE
+    gender VARCHAR
+    phone_no VARCHAR
+    email VARCHAR
+    address VARCHAR
+    aadhar_no VARCHAR
+    customer_status VARCHAR
+}
 
-    ACCOUNT {
-        BIGINT account_id PK
-        BIGINT customer_id FK
-        VARCHAR account_number UNIQUE
-        VARCHAR account_type
-        VARCHAR account_status
-    }
+ACCOUNT {
+    account_id BIGINT PK
+    customer_id BIGINT FK
+    account_number VARCHAR UNIQUE
+    account_type VARCHAR
+    account_status VARCHAR
+}
 
-    NOMINEE {
-        INT nominee_id PK
-        BIGINT account_id FK
-        VARCHAR nominee_name
-        VARCHAR relationship
-        BOOLEAN is_guardian
-    }
+NOMINEE {
+    nominee_id INT PK
+    account_id BIGINT FK
+    nominee_name VARCHAR
+    relationship VARCHAR
+    is_guardian BOOLEAN
+}
 
-    USERS ||--|| CUSTOMER : "has"
-    CUSTOMER ||--o{ ACCOUNT : "owns"
-    ACCOUNT ||--o{ NOMINEE : "has"
+USERS ||--|| CUSTOMER : has
+CUSTOMER ||--o{ ACCOUNT : owns
+ACCOUNT ||--o{ NOMINEE : has
+
+```
