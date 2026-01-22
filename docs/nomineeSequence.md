@@ -1,14 +1,14 @@
 ```mermaid
 
 sequenceDiagram
-actor Client
+actor User
 participant LoginFilter
 participant NomineeServlet
 participant NomineeService
 participant NomineeDAO
 participant DbConnection
 
-    Client ->> LoginFilter: POST /nominee
+    User ->> LoginFilter: POST /nominee
     LoginFilter ->> LoginFilter: doFilter()
     LoginFilter ->> NomineeServlet: authorized
 
@@ -20,4 +20,4 @@ participant DbConnection
 
     NomineeDAO -->> NomineeService: success
     NomineeService -->> NomineeServlet: success
-    NomineeServlet -->> Client: HTTP 201
+    NomineeServlet -->> User: HTTP 201

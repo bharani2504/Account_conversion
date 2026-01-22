@@ -1,13 +1,13 @@
 ```mermaid
 sequenceDiagram
-    actor Client
+    actor User
     participant LoginFilter
     participant CustomerServlet
     participant CustomerService
     participant CustomerDAO
     participant DbConnection
 
-    Client ->> LoginFilter: POST /customer
+    User ->> LoginFilter: POST /customer
     LoginFilter ->> LoginFilter: doFilter()
     LoginFilter ->> CustomerServlet: authorized request
 
@@ -19,4 +19,4 @@ sequenceDiagram
 
     CustomerDAO -->> CustomerService: success
     CustomerService -->> CustomerServlet: success
-    CustomerServlet -->> Client: HTTP 201
+    CustomerServlet -->> User: HTTP 201

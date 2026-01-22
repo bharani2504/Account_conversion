@@ -1,6 +1,6 @@
 ```mermaid
 sequenceDiagram
-    actor Client
+    actor User
     participant LoginFilter
     participant LoginServlet
     participant UserService
@@ -9,7 +9,7 @@ sequenceDiagram
     participant Jwt
     participant DbConnection
 
-    Client ->> LoginFilter: HTTP POST /login
+    User ->> LoginFilter: HTTP POST /login
     LoginFilter ->> LoginFilter: doFilter()
 
     LoginFilter ->> LoginServlet: request forwarded
@@ -27,4 +27,4 @@ sequenceDiagram
     Jwt -->> UserService: JWT token
 
     UserService -->> LoginServlet: success + token
-    LoginServlet -->> Client: HTTP 200 (JWT)
+    LoginServlet -->> User: HTTP 200 (JWT)
