@@ -19,7 +19,9 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
-        try{ User user = objectMapper.readValue(request.getInputStream(), User.class);
+        try{ User user = objectMapper.readValue(
+                request.getInputStream(),
+                User.class);
             userService.addUser(user);
             response.setStatus(HttpServletResponse.SC_ACCEPTED);
             response.getWriter().write("User Registered Successfully");

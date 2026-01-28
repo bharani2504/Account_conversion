@@ -1,7 +1,4 @@
 package org.bank.account.model;
-
-
-
 import java.time.LocalDate;
 
 public class Customer {

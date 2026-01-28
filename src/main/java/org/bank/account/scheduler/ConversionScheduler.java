@@ -1,6 +1,13 @@
 package org.bank.account.scheduler;
 
-import org.quartz.*;
+import org.bank.account.exception.DataException;
+import org.quartz.JobDetail;
+import org.quartz.Scheduler;
+import org.quartz.Trigger;
+import org.quartz.TriggerBuilder;
+import org.quartz.CronScheduleBuilder;
+import org.quartz.JobBuilder;
+import org.quartz.SchedulerException;
 import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,7 +39,7 @@ public class ConversionScheduler implements ServletContextListener {
             scheduler.scheduleJob(job, trigger);
 
         } catch (SchedulerException e) {
-            throw new RuntimeException(e);
+            throw new DataException("scheduler failed to run",e);
         }
 
     }

@@ -15,6 +15,7 @@ public class AccountService {
 
     AccountDAO accountDAO=new AccountDAO();
     NomineeDAO nomineeDAO=new NomineeDAO();
+    private static final int MAJOR_AGE = 18;
 
     public void insert(Account account){
         accountDAO.insert(account);
@@ -33,7 +34,7 @@ public class AccountService {
         LocalDate Dob=customer.getDateOfBirth();
         int age= Period.between(Dob,LocalDate.now()).getYears();
 
-        if(age>=18){
+        if(age>=MAJOR_AGE){
             int updated=accountDAO.UpdateAccount(customer.getCustomerId());
             if(updated>0){
                 nomineeDAO.UpdateNominee(customer.getCustomerId());

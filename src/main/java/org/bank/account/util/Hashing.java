@@ -1,6 +1,7 @@
 package org.bank.account.util;
 
-import org.mindrot.jbcrypt.BCrypt;public class Hashing {
+import org.mindrot.jbcrypt.BCrypt;
+public class Hashing {
     private static final int SALT_VALUE=5;
     public static String hashPassword(String pass){
 

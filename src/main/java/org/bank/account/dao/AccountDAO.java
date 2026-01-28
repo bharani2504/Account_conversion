@@ -99,7 +99,7 @@ public class AccountDAO {
             return ps.executeUpdate();
 
         } catch (SQLException e) {
-            throw new DataException("failed to convert account from minor to major");
+            throw new DataException("failed to convert account from minor to major",e);
         }
     }
 }

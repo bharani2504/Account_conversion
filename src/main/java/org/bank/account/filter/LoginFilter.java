@@ -1,8 +1,9 @@
 package org.bank.account.filter;
 
-import org.bank.account.exception.DataException;
-import org.bank.account.service.UserService;
+
 import org.bank.account.util.Jwt;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class LoginFilter implements Filter {
+
+    private static final Logger log =LoggerFactory.getLogger(LoginFilter.class);
 
     private static final int SUB_STRING=7;
 
@@ -49,10 +52,10 @@ public class LoginFilter implements Filter {
 
             if (Jwt.validateToken(token, username)) {
                 chain.doFilter(request, response);
-                return;
             }
 
         } catch (Exception e) {
+            log.warn("Invalid Jwt token",e);
             res.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             res.getWriter().write("Invalid token");
 
